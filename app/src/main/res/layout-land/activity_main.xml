@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/outputDiners"
+        android:id="@+id/outputCoins"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:autoSizeTextType="uniform"
@@ -27,7 +27,7 @@
         android:layout_height="0dp"
         android:autoSizeTextType="uniform"
         android:text="YUAN"
-        app:layout_constraintBottom_toTopOf="@+id/inputDiners"
+        app:layout_constraintBottom_toTopOf="@+id/inputCoins"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline16"
@@ -41,7 +41,7 @@
         android:layout_height="0dp"
         android:autoSizeTextType="uniform"
         android:text="YEN"
-        app:layout_constraintBottom_toTopOf="@+id/inputDiners"
+        app:layout_constraintBottom_toTopOf="@+id/inputCoins"
         app:layout_constraintEnd_toStartOf="@+id/guideline16"
         app:layout_constraintStart_toStartOf="@+id/guideline17"
         app:layout_constraintTop_toTopOf="@+id/guideline11"
@@ -231,11 +231,11 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/inputDiners"
+        android:id="@+id/inputCoins"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:autoSizeTextType="uniform"
-        android:background="#8A7777"
+        android:background="#E8776F"
         android:text=""
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
@@ -252,7 +252,7 @@
         android:layout_height="0dp"
         android:autoSizeTextType="uniform"
         android:text="LLIURES"
-        app:layout_constraintBottom_toTopOf="@+id/inputDiners"
+        app:layout_constraintBottom_toTopOf="@+id/inputCoins"
         app:layout_constraintEnd_toStartOf="@+id/guideline13"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline11"
@@ -264,7 +264,7 @@
         android:layout_height="0dp"
         android:autoSizeTextType="uniform"
         android:text="DOLLAR"
-        app:layout_constraintBottom_toTopOf="@+id/inputDiners"
+        app:layout_constraintBottom_toTopOf="@+id/inputCoins"
         app:layout_constraintEnd_toStartOf="@+id/guideline17"
         app:layout_constraintStart_toEndOf="@+id/btnLibra"
         app:layout_constraintTop_toTopOf="@+id/guideline11"
@@ -530,6 +530,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/BtnDELCL"
         android:layout_width="70dp"
         android:layout_height="30dp"
         app:layout_constraintBottom_toTopOf="@+id/btnIgual"

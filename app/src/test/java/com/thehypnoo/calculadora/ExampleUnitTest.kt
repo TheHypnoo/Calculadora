@@ -1,4 +1,4 @@
-package com.example.calculadora
+package com.thehypnoo.calculadora
 
 import org.junit.Test
 
