@@ -1,5 +1,6 @@
 package com.thehypnoo.calculadora
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
@@ -15,7 +16,6 @@ private const val DOLAR = "dolar"
 private const val LLIURA = "lliura"
 private const val YEN = "yen"
 private const val YUAN = "yuan"
-//Fet per Sergi Gonzalez Lloria
 
 class MainActivity : AppCompatActivity() {
 
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_main)
         initViews()
         initListeners()
@@ -89,6 +89,7 @@ class MainActivity : AppCompatActivity() {
         btnYuan = findViewById(R.id.btnYuan)
     }
 
+    @SuppressLint("SetTextI18n")
     private fun initListeners(){
 
         btn0.setOnClickListener { addNumber(0) }
@@ -114,7 +115,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun addNumber(numero: Int) {
-
         val posicio = inputText.text.toString().lastIndexOf(",")
         if (inputText.length() < 12) {
             if (posicio > -1) {
@@ -257,7 +257,7 @@ class MainActivity : AppCompatActivity() {
             dialog.show()
         } else {
             val comaToPoint = inputText.text.toString().replace(',','.')
-            var resultat = comaToPoint.toDouble()*conversionActual
+            val resultat = comaToPoint.toDouble()*conversionActual
 
             if (resultat % 1.0 != 0.0) {
                 outputText.text = truncate(resultat.toString(), 2)!!.replace('.',',')
@@ -266,7 +266,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun truncate(value: String, places: Int): String? {
+    private fun truncate(value: String, places: Int): String {
         return BigDecimal(value).setScale(places, RoundingMode.DOWN).stripTrailingZeros().toString()
     }
 
@@ -276,6 +276,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun backgroundBottonCoins(divisa: String) {
 
+        btnDolar.setBackgroundColor(ContextCompat.getColor(this,android.R.color.holo_orange_dark))
         btnLliura.setBackgroundColor(ContextCompat.getColor(this, android.R.color.holo_orange_dark))
         btnYen.setBackgroundColor(ContextCompat.getColor(this, android.R.color.holo_orange_dark))
         btnYuan.setBackgroundColor(ContextCompat.getColor(this, android.R.color.holo_orange_dark))
